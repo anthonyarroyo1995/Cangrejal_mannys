@@ -1,0 +1,16 @@
+/*HEADER*/
+.navbar{
+	margin-bottom: 0;
+}
+.jumbotron{
+background: red;
+color: #fff;
+padding: 20px 0;
+}
+.post .thumb{
+	margin.right: 10px;
+	width: 40%;
+}
+.post .thumb img{
+	width: 100%;
+}
