@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" maximum-scale=1, minimun-scale=1>
+            <meta charset="utf-8">
+    <meta name="viewport" content="widh=device-widh,user-scalable =no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title> CANGREJAL MANNY'S Pedido</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="blog/Menu.html">
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
+            <style>
+    #miTabla tbody td {text-align:right;}
+    #miTabla tbody td:nth-child(1) {text-align:left;}
+    #miTabla th,#miTabla td  {padding:1px 10px;border:1px solid #aaa;}
+    </style>
+    
+</head>
+
+<body>     
+        <header>
+
+        <nav class="navbar navbar-inverse navbar-static-top" rol="navigation">
+            
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="#navegacion-cm">
+                        <span class="sr-only"> Desplegar / Ocultar Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand"></a>
+            </div>
+
+            
+                            <div class="collapsed navbar-collapse" id="navegacion-cm">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Inicio</a></li>
+                        <li class="dropdown">
+                            <a href="Pedido.html" target="_blank">Pedido</a>
+                            </a>
+                            
+                        </li>                   
+                        <li><a href="Locales.html" target="_blank">Locales</a></li>
+                        <li><a href="QuienesSomos.html" target="_blank">Quienes sómos</a></li>
+                        <li><a href="Galeria.html" target="_blank">Galería de imágenes</a></li> 
+                        </li>
+                    </ul>
+                </div>
+                </header>
+                    <section class="jumbotron jumbotron-cm">
+        <div class="container">
+            <h1> CANGREJAL MANNY'S</h1>
+            <p>El mejor restaurante de cangrejos del Ecuador</p>
+        </div>
+    </section>
+<center><h1>Menú</h1></center>
+<center><table id="miTabla">
+    <thead>
+        <tr>
+            <th>Platos</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Camarones</td>
+            <td>$3</td>
+            
+        </tr>
+        <tr>
+            <td>Camarones al ajillo</td>
+            <td>$4</td>
+            
+        </tr>
+        <tr>
+            <td>Ceviche</td>
+            <td>$2,50</td>
+        </tr>
+        <tr>
+            <td>Cangrejo chino</td>
+            <td>$4,50</td>
+        </tr>
+        <tr>
+            <td>Festival Mannys</td>
+            <td>$6</td>
+        </tr>
+    </tbody>
+</table>
+</center>
+
+            <form name="frmDatos" action="#" method="get" target="_self" onsubmit="validarDatos()">
+            <label><h4>Ingresar Datos del Cliente</h4><br>
+            <label>Cedula: <input type="text" name="cedula"><br><br>
+            Nombre: <input type="text" name="nombre"><br><br>
+            <label><h4>Ingresar Datos del Pedido</h4><br>
+            <label for="producto">Seleccione un pedido:</label>
+
+            <select name="producto" id="producto" >
+                <option selected disabled hidden style='display: none' value=''></option>
+                    <option value="1">Camarones</option>
+                     <option value="2">Camarones al ajillo</option>
+                     <option value="3">Ceviche</option>
+                    <option value="4">Cangrejo Chino</option>
+                    <option value="5">Festival Mannys</option>
+            </select>
+            <br><br>
+
+              <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" value=""><br><br>
+            
+            
+
+            
+          <label for="subtotal">Subtotal:  </label>
+            <input type="text" id="subtotal" name="subtotal" value="0.00" disabled><br><br>
+
+          <label for="descuento">Descuento:</label>
+            <input type="text" id="descuento" name="descuento" value="0.00" disabled><br><br>
+
+          <label for="descuento">Total:    </label>
+            <input type="text" id="total" name="total"  value="0.00" disabled><br><br>
+
+             <input type="reset" value="Borrar">        
+            <input type="submit" value="Calcular" onclick="validarDatos()"></form><br><br><br><br>
+            </form>     
+
+            
+    <script type="text/javascript">
+        function validarDatos()
+                {
+                    var v=true;
+                        if(document.frmDatos.cedula.value.length ==0)
+                    {
+                                v=false;
+                        alert("Ingrese la cedula");
+                        event.preventDefault();
+                        document.frmDatos.cedula.focus();
+                        return v;
+                    }  
+                        if(document.frmDatos.nombre.value.length ==0)
+                    {
+                                v=false;
+                        alert("Ingrese el nombre");
+                        event.preventDefault();
+                        document.frmDatos.nombre.focus();
+                        return v;
+                    }  
+                    if(document.frmDatos.producto.value.length==0)
+                    {   
+                                v=false;
+                        alert("Seleccione el pedido");
+                        event.preventDefault();
+                        document.frmDatos.producto.focus();
+                        return v;
+                    }
+                       
+                        if(document.frmDatos.cantidad.value.length==0)
+                    {
+                                v=false;
+                        alert("Ingrese la cantidad");
+                        event.preventDefault();
+                        document.frmDatos.cantidad.focus();
+                        return v;
+                    } 
+
+            calcular();
+            event.preventDefault();//evita que se envie el formulario
+        }
+
+        function calcular()
+            {
+                var valor = 0.0;
+                
+                var cantidad = parseInt(document.frmDatos.cantidad.value);
+                switch (parseInt(document.frmDatos.producto.value)) {
+                    case 1:
+                    valor = 3.00;     
+                    break;
+                    case 2:
+                        valor = 4.00;
+                        break;
+                    case 3:
+                        valor = 2.50; 
+                        break;
+                    case 4:
+                        valor = 4.50; 
+                        break;
+                    case 5:
+                        valor = 6; 
+                        break;
+                }
+                var subtotal;
+                subtotal= cantidad*valor;
+                document.frmDatos.subtotal.value = subtotal.toFixed(2); 
+                
+                var descuento = 0.0; 
+                if (cantidad<5) {
+                    descuento = 0.05;
+                }
+                else if (cantidad<20) {
+                    descuento = 0.1;
+                }
+                else
+                {
+                    descuento = 0.15;
+                }
+                 descuento = descuento*document.frmDatos.subtotal.value;
+                 document.frmDatos.descuento.value = descuento.toFixed(2);
+                document.frmDatos.total.value = document.frmDatos.subtotal.value - document.frmDatos.descuento.value    
+            }
+        </script>
+
+        </body>
+
+
+</html>
